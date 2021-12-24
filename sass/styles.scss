@@ -1,7 +1,37 @@
 h1, h2, h3, h4, h5, h6 {
     margin-top:2.5rem;
     margin-bottom:1rem;
+
+    & a {
+        color:$dark;
+        text-decoration: none;
+    }
 }
+
+.blog-masthead {
+    background-color:black;
+}
+
+.newsletter {
+    form {
+        margin:25px 0 !important;
+        padding:0 !important;
+        font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
+        p {
+            font-size:1rem !important;
+        }
+    }
+}
+
+figcaption {
+    font-style: italic;
+    font-size:0.8em;
+}
+
+article img {
+    display:block;
+}
+
 
 code.mermaid {
     display:none;
@@ -13,7 +43,7 @@ code.mermaid {
     }
 }
 
-figure {
+figure, article {
     img {
         max-width:100%;
         max-height:350px;
@@ -39,6 +69,12 @@ figure {
         content:"";
     }
 }
+
+.footer {
+    padding: 2.5rem 0;
+    border-top: .05rem solid #e5e5e5;
+}
+
 
 .mermaid {
     background: $light;
