@@ -12,6 +12,10 @@ h1, h2, h3, h4, h5, h6 {
     background-color:black;
 }
 
+.navbar-nav .nav-item:first-child .nav-link {
+    padding-left: 0;
+}
+
 .newsletter {
     form {
         margin:25px 0 !important;
@@ -73,6 +77,18 @@ figure, article {
 .footer {
     padding: 2.5rem 0;
     border-top: .05rem solid #e5e5e5;
+    text-align: center;
+
+    ul {
+        @extend .list-inline;
+        li {
+            @extend .list-inline-item;
+        }
+        li + li:before {
+            content: " | "
+        }
+    }
+
 }
 
 
