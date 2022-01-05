@@ -1,4 +1,18 @@
 table {
     @extend .table;
     @extend .table-striped;
+
+    & colgroup + thead {
+        border-top:0 !important;
+    }
+}
+
+blockquote {
+    @extend .blockquote;
+    &:last-child {
+        em:only-child {
+            @extend .blockquote-footer;
+            font-style: normal;
+        }
+    }
 }
