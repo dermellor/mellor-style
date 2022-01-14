@@ -9,10 +9,36 @@ table {
 
 blockquote {
     @extend .blockquote;
-    &:last-child {
-        em:only-child {
-            @extend .blockquote-footer;
-            font-style: normal;
+    & >:last-child {
+        & em, a {
+            &:only-child {
+                @extend .blockquote-footer;
+                font-style: normal;
+            }
         }
+        & a:only-child {
+            &:before {
+                text-decoration: none;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+a[href*="#tag"] {
+    @extend .badge;
+    text-decoration:none;
+    cursor: default;
+    &[href="#tag-primary"]{
+        @extend .bg-primary;
+    }
+    &[href="#tag-secondary"]{
+        @extend .bg-secondary;
+    }
+    &[href="#tag-success"]{
+        @extend .bg-success;
+    }
+    &[href="#tag-danger"]{
+        @extend .bg-danger;
     }
 }
