@@ -569,21 +569,21 @@ progress {
   text-transform: uppercase;
 }
 
-.blockquote {
+.blockquote, blockquote {
   margin-bottom: 1rem;
   font-size: 1.25rem;
 }
-.blockquote > :last-child {
+.blockquote > :last-child, blockquote > :last-child {
   margin-bottom: 0;
 }
 
-.blockquote-footer {
+.blockquote-footer, blockquote:last-child em:only-child, blockquote:last-child a:only-child {
   margin-top: -1rem;
   margin-bottom: 1rem;
   font-size: 0.875em;
   color: #6c757d;
 }
-.blockquote-footer::before {
+.blockquote-footer::before, blockquote:last-child em:only-child::before, blockquote:last-child a:only-child::before {
   content: "— ";
 }
 
@@ -11118,6 +11118,14 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+table colgroup + thead {
+  border-top: 0 !important;
+}
+
+blockquote:last-child em:only-child, blockquote:last-child a:only-child {
+  font-style: normal;
+}
+
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin-top: 2.5rem;
   margin-bottom: 1rem;
@@ -11168,21 +11176,21 @@ figure img, article img {
   max-height: 350px;
 }
 
+.table, table {
+  font-size: 0.8rem;
+}
+
 .signature {
   max-width: 300px;
 }
 
-.blockquote, .blockquote-footer {
+.blockquote, blockquote {
   border-left: 5px solid #ced4da;
   padding-left: 15px;
 }
 
-.blockquote {
+.blockquote, blockquote {
   font-size: 1rem;
-}
-
-.blockquote-footer:before {
-  content: "";
 }
 
 .footer {
@@ -11235,6 +11243,8 @@ figure img, article img {
   height: 1.5em;
   text-align: center;
   display: inline-block;
+  padding-top: 0.25em;
+  line-height: 1;
 }
 
 /*# sourceMappingURL=build.css.map */

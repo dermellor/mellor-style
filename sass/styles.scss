@@ -49,26 +49,47 @@ code.mermaid {
 
 figure, article {
     img {
-        max-width:100%;
-        max-height:350px;
+        width:100%;
     }
 }
 
-.table {
-    font-size:0.8rem;
+@include media-breakpoint-up(xxl) {
+    figure {
+
+    }
+    figure:not(:has(figcaption:empty)) {
+        @include make-col(7);
+        &:nth-child(even) {
+            float:left;
+            margin-left: -100% / $grid-columns * 7;
+            padding-right: $spacer * 3;
+        }
+        &:nth-child(odd) {
+            float:right;
+            margin-right: -100% / $grid-columns * 7;
+            padding-left: $spacer * 3;
+        }     
+    }
 }
+
+
 
 .signature {
     max-width:300px;
 }
 
-.blockquote {
+.blockquote, .blockquote-footer {
     border-left: 5px solid $gray-400;
     padding-left:15px;
 }
 
 .blockquote {
     font-size:1rem;
+}
+.blockquote-footer {
+    &:before {
+        content:"";
+    }
 }
 
 .footer {
@@ -118,11 +139,11 @@ figure, article {
     padding:15px;
     border-radius:10px;
 
-    > li {
+    li {
         counter-increment: item;
         margin-bottom: 15px;
     }
-    > li:before {
+    li:before {
         margin-right: 10px;
         content: counter(item);
         background: $dark;
@@ -132,7 +153,5 @@ figure, article {
         height: 1.5em;
         text-align: center;
         display: inline-block;
-        padding-top: 0.25em;
-        line-height: 1;
     }
 }
