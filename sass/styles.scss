@@ -139,11 +139,16 @@ figure, article {
     padding:15px;
     border-radius:10px;
 
-    li {
+    > li {
         counter-increment: item;
         margin-bottom: 15px;
     }
-    li:before {
+
+    > li > p {
+        display:inline;
+    }
+
+    > li:before {
         margin-right: 10px;
         content: counter(item);
         background: $dark;

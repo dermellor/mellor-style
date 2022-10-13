@@ -6,6 +6,8 @@
     "bootstrap": "^5.0.0-beta2"
   },
   "scripts": {
-    "build-obsidian": "sass sass/obsidian.scss build/obsidian/mellorstyle.css"
+    "build": "sass sass/main.scss build/css/mellorstyle.css",
+    "build-obsidian": "sass sass/obsidian.scss build/obsidian/mellorstyle.css",
+    "build-editor": "sass sass/editor.scss build/editor/mellorstyle.css"
   }
 }
