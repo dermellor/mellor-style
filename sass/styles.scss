@@ -8,6 +8,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+section {
+    padding: 2em 0;
+}
+
+.bg-dark {
+    color: $white;
+}
+
 .blog-masthead {
     background-color:black;
 }
@@ -72,6 +80,69 @@ figure, article {
     }
 }
 
+article.short header {
+    background: $light;
+    padding: 1rem;
+    padding-left:2rem;
+    time {
+        display:none;
+    }
+    h2 {
+        font-size:1em;
+        margin:0;
+        font-weight: normal;
+    }
+    header, h2, a {
+        display: inline;
+    }
+}
+
+
+article.post.row .image {
+    height:12em;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+    margin-bottom:-1em;
+    @include media-breakpoint-up(sm) { 
+        background-position: top left;
+    }
+    @include media-breakpoint-up(lg) { 
+        height: 15em;
+        margin-top:2em;
+    }
+}
+
+div > article.short + article.short {
+    margin-top: -1rem;
+}
+
+article.short + article:not(.short) {
+    margin-top: 1rem;
+}
+
+article:not(.short) + article.short {
+    margin-top:2em;
+}
+
+article:not(.short) + article.short, div > article.short:first-child {
+    header::before {
+        content: "Notizen & Links";
+        display:block;
+        margin-bottom:1em;
+        color:grey;
+        margin-left:-1rem;
+    }
+}
+
+
+article:not(.short) + article:not(.short) {
+    @include media-breakpoint-down(lg) {
+        border-top:1px solid grey;
+    }
+    padding-top:1em;
+    margin-top:2em;
+}
 
 
 .signature {
@@ -135,20 +206,13 @@ figure, article {
 :not(.footnotes) > ol {
     list-style: none;
     counter-reset: item;
-    background: $light;
-    padding:15px;
-    border-radius:10px;
+    @extend .highlight-box;
 
-    > li {
+    li {
         counter-increment: item;
         margin-bottom: 15px;
     }
-
-    > li > p {
-        display:inline;
-    }
-
-    > li:before {
+    li:before {
         margin-right: 10px;
         content: counter(item);
         background: $dark;
@@ -158,5 +222,16 @@ figure, article {
         height: 1.5em;
         text-align: center;
         display: inline-block;
+    }
+}
+
+.highlight-box {
+    background: $light;
+    padding:15px;
+    &.white {
+        background: $white;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin-top:0;
     }
 }
