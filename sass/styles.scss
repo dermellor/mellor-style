@@ -187,6 +187,7 @@ article:not(.short) + article:not(.short) {
     margin: 15px 0;
     svg {
         height:auto;
+        max-height:500px;
         width:100%;
     }
 
@@ -206,11 +207,11 @@ article:not(.short) + article:not(.short) {
     counter-reset: item;
     @extend .highlight-box;
 
-    li {
+    > li {
         counter-increment: item;
         margin-bottom: 15px;
     }
-    li:before {
+    > li:before {
         margin-right: 10px;
         content: counter(item);
         background: $dark;
