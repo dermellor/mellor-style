@@ -166,7 +166,6 @@ article:not(.short) + article:not(.short) {
 .footer {
     padding: 2.5rem 0;
     border-top: .05rem solid #e5e5e5;
-    text-align: center;
 
     ul {
         @extend .list-inline;
@@ -177,7 +176,6 @@ article:not(.short) + article:not(.short) {
             content: " | "
         }
     }
-
 }
 
 
@@ -233,5 +231,19 @@ article:not(.short) + article:not(.short) {
     }
     h1, h2, h3, h4, h5, h6 {
         margin-top:0;
+    }
+}
+
+.btn {
+    img {
+        width:100%;
+        max-height:1em;
+        padding:0;
+    }
+}
+
+.btn-lg {
+    img {
+        max-height:2em;
     }
 }
