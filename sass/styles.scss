@@ -1,3 +1,6 @@
+
+/* 
+
 h1, h2, h3, h4, h5, h6 {
     margin-top:2.5rem;
     margin-bottom:1rem;
@@ -8,44 +11,29 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-section {
-    padding: 2em 0;
+mark {
+    background: $primary-light;
 }
 
-.bg-dark {
-    color: $white;
-}
+*/
 
-.blog-masthead {
-    background-color:black;
-}
-
-.navbar-nav .nav-item:first-child .nav-link {
-    padding-left: 0;
-}
-
-.newsletter {
-    form {
-        margin:25px 0 !important;
-        padding:0 !important;
-        font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
-        p {
-            font-size:1rem !important;
-        }
+.highlight-box {
+    h1, h2, h3, h4, h5, h6 {
+        margin-top:0;
     }
+    border: 2px solid $dark;
 }
 
-figcaption {
-    font-style: italic;
-    font-size:0.8em;
+.btn-primary {
+    color: $dark;
 }
 
-article img {
-    display:block;
+.btn-lg {
+    font-size: $btn-font-size;
+    font-weight: bold;
 }
 
-
-code.mermaid {
+code.mermaid, code.language-mermaid {
     display:none;
     &[data-processed="true"] {
         display:block;
@@ -53,128 +41,8 @@ code.mermaid {
     svg {
         margin:25px 0;
     }
-}
-
-figure, article {
-    img {
-        width:100%;
-    }
-}
-
-@include media-breakpoint-up(xxl) {
-    figure {
-
-    }
-    figure:not(:has(figcaption:empty)) {
-        @include make-col(7);
-        &:nth-child(even) {
-            float:left;
-            margin-left: -100% / $grid-columns * 7;
-            padding-right: $spacer * 3;
-        }
-        &:nth-child(odd) {
-            float:right;
-            margin-right: -100% / $grid-columns * 7;
-            padding-left: $spacer * 3;
-        }     
-    }
-}
-
-article.short header {
-    background: $light;
-    padding: 1rem;
-    padding-left:2rem;
-    time {
-        display:none;
-    }
-    h2 {
-        font-size:1em;
-        margin:0;
-        font-weight: normal;
-    }
-    header, h2, a {
-        display: inline;
-    }
-}
-
-
-article.post.row .image {
-    height:12em;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-position: top center;
-    margin-bottom:-1em;
-    @include media-breakpoint-up(sm) { 
-        background-position: top left;
-    }
-    @include media-breakpoint-up(lg) { 
-        height: 15em;
-        margin-top:2em;
-    }
-}
-
-div > article.short + article.short {
-    margin-top: -1rem;
-}
-
-article.short + article:not(.short) {
-    margin-top: 1rem;
-}
-
-article:not(.short) + article.short {
-    margin-top:2em;
-}
-
-article:not(.short) + article.short, div > article.short:first-child {
-    header::before {
-        content: "Notizen & Links";
-        display:block;
-        margin-bottom:1em;
-        color:grey;
-        margin-left:-1rem;
-    }
-}
-
-
-article:not(.short) + article:not(.short) {
-    @include media-breakpoint-down(lg) {
-        border-top:1px solid grey;
-    }
-    padding-top:1em;
-    margin-top:2em;
-}
-
-
-.signature {
-    max-width:300px;
-}
-
-.blockquote, .blockquote-footer {
-    border-left: 5px solid $gray-400;
-    padding-left:15px;
-}
-
-.blockquote {
-    font-size:1rem;
-}
-.blockquote-footer {
-    &:before {
-        content:"";
-    }
-}
-
-.footer {
-    padding: 2.5rem 0;
-    border-top: .05rem solid #e5e5e5;
-
-    ul {
-        @extend .list-inline;
-        li {
-            @extend .list-inline-item;
-        }
-        li + li:before {
-            content: " | "
-        }
+    rect.basic.label-container {
+        stroke-width: 2px !important;
     }
 }
 
@@ -205,8 +73,7 @@ article:not(.short) + article:not(.short) {
 :not(.footnotes) > ol {
     list-style: none;
     counter-reset: item;
-    @extend .highlight-box;
-
+    padding-left:0.5em;
     > li {
         counter-increment: item;
         margin-bottom: 15px;
@@ -224,27 +91,33 @@ article:not(.short) + article:not(.short) {
     }
 }
 
-.highlight-box {
-    background: $light;
-    padding:15px;
-    &.white {
-        background: $white;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        margin-top:0;
+/*
+figure {
+    a[href*="twitter.com"][href*="status"] {
+        @extend .social-embedded;
     }
 }
+*/
 
-.btn {
+
+figure, article {
     img {
         width:100%;
-        max-height:1em;
-        padding:0;
+        max-width:500px;
     }
 }
 
-.btn-lg {
-    img {
-        max-height:2em;
-    }
+figure {
+    text-align: center;
+}
+
+
+
+
+table {
+    @extend .table;
+}
+
+a[href*="youtube"] img {
+
 }
