@@ -124,6 +124,15 @@ a[href*="youtube"] img {
 
 
 // =====================================================================
+// Headings — h1 promoted to display-2 size by default (page-title style).
+// Was previously in hugo-wiki-theme/main.scss; lives here now.
+// =====================================================================
+
+h1 {
+    @extend .display-2;
+}
+
+// =====================================================================
 // Section title — orange "marker" highlight band behind heading text.
 // Was previously duplicated in hugo-wiki-theme/main.scss; lives here now
 // so Blog (Hugo theme) and Social (GoToSocial brand-build) share one source.
